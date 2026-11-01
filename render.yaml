@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: miai-playground
+    name: miai-studio
     runtime: python
     plan: free
     buildCommand: pip install -r requirements.txt
