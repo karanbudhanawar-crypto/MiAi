@@ -124,7 +124,7 @@ def ask():
     }
 
     return jsonify(
-        answer=f"{labels[tool]}: Gemini is temporarily unavailable.\\n\\n{text[:600]}",
+        answer=f"{labels[tool]}: Gemini is temporarily unavailable.\n\n{text[:600]}",
         mode="demo",
         notice=error
     )
