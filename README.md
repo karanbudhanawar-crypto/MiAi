@@ -1,4 +1,4 @@
-# MiAi — AI Playground (EN143)
+# MiAi Studio — AI Playground (EN143)
 Responsive AI playground built with Flask, HTML, CSS and JavaScript.
 
 ## Features
