@@ -19,7 +19,7 @@ def generate(tool, text, image=None, mime=None):
     if not key:
         return None, "GEMINI_API_KEY is not configured."
 
-    model = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
+    model = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
     parts = [{"text": text or "Please analyze this image."}]
     if image:
         parts.append({
@@ -33,8 +33,8 @@ def generate(tool, text, image=None, mime=None):
         "system_instruction": {"parts": [{"text": PROMPTS[tool]}]},
         "contents": [{"role": "user", "parts": parts}],
         "generationConfig": {
-            "maxOutputTokens": 2048,
-            "thinkingConfig": {"thinkingLevel": "low"}
+            "maxOutputTokens": 1024,
+            "thinkingConfig": {"thinkingLevel": "minimal"}
         }
     }
 
@@ -87,7 +87,7 @@ def health():
         status="ok",
         app="MiAi",
         ai_configured=bool(os.getenv("GEMINI_API_KEY")),
-        model=os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
+        model=os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
     )
 
 
